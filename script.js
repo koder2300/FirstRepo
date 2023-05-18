@@ -2,9 +2,11 @@ const inputBlack = document.querySelector(".black");
 const buttonBlue = document.querySelector(".blue");
 const closeBtn = document.querySelector(".close");
 const items = [];
+const closedItems = [];
 const addItem = () => {
   console.log(inputBlack.value);
   items.push(inputBlack.value);
+
   console.log(items);
   //   return console.log(`Dodałeś item`);
 };
@@ -20,6 +22,7 @@ const renderList = () => {
     const newContent2 = document.createTextNode("ZAMKNIJ");
 
     newDiv.className = "render";
+    newDiv.id = items.slice(0, 14);
     newDiv.appendChild(newContent);
     newDiv2.appendChild(newContent2);
 
@@ -28,8 +31,15 @@ const renderList = () => {
 
     document.body.appendChild(newDiv2);
     document.body.appendChild(newDiv);
-    document.body.lastChild(closeBtn);
   });
 };
 
 buttonBlue.addEventListener("click", renderList);
+
+const closeAllItems = () => {
+  items.concat(closedItems);
+  console.log(closedItems);
+};
+// 17. dodaj nowa funkcje "closeAllItems" która przekopiuje wszystkie wartości z tablicy "items" do "closedItems"
+//
+// 18. edytuj funkcje addItem i po nadaniu contentu dla utworzonego divu nadaj mu również ID, niech będzie to 15 pierwszych liter contentu, czyli musisz przyciąć wartość którą umieściłeś w content div do 15 znaków i użyć jako id
