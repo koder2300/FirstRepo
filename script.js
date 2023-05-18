@@ -63,7 +63,3 @@ const closeItem = (event) => {
 };
 
 const updateRenderedList = () => {};
-// 24. Dodaj w HTML div ktory bedzie kontenerem na wszystkie items
-//24+
-//25+
-//26
