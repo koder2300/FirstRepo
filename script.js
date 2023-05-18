@@ -1,7 +1,8 @@
 const inputBlack = document.querySelector(".black");
 const buttonBlue = document.querySelector(".blue");
 const closeBtn = document.querySelector(".close");
-const allBtn = document.querySelectorAll(".renderPlus2");
+// const allBtn = document.querySelectorAll(".renderPlus2");
+const items2 = document.querySelector(".container");
 const items = [];
 const closedItems = [];
 const addItem = () => {
@@ -19,9 +20,10 @@ const addItem = () => {
 buttonBlue.addEventListener("click", addItem);
 
 const renderList = () => {
+  items2.innerHTML = "";
   items.forEach((el) => {
     let newDiv = document.createElement("div");
-    let newDiv2 = document.createElement("button");
+    let closeBtn2 = document.createElement("button");
 
     const newContent = document.createTextNode(el);
     const newContent2 = document.createTextNode("ZAMKNIJ");
@@ -29,13 +31,16 @@ const renderList = () => {
     newDiv.className = "render";
     newDiv.id = items.slice(0, 14);
     newDiv.appendChild(newContent);
-    newDiv2.appendChild(newContent2);
+    closeBtn2.appendChild(newContent2);
 
     newDiv.classList.add("renderPlus");
-    newDiv2.classList.add("renderPlus2");
+    closeBtn2.classList.add("renderPlus2");
 
-    document.body.appendChild(newDiv2);
-    document.body.appendChild(newDiv);
+    // newDiv.appendChild(closeBtn2);
+    // document.body.appendChild(newDiv);
+    newDiv.appendChild(closeBtn2);
+    items2.appendChild(newDiv);
+    closeBtn2.addEventListener("click", closeItem);
   });
 };
 
@@ -45,16 +50,20 @@ const closeAllItems = () => {
   items.concat(closedItems);
   console.log(closedItems);
 };
-// 17. dodaj nowa funkcje "closeAllItems" która przekopiuje wszystkie wartości z tablicy "items" do "closedItems"
-//
-// 18. edytuj funkcje addItem i po nadaniu contentu dla utworzonego divu nadaj mu również ID, niech będzie to 15 pierwszych liter contentu, czyli musisz przyciąć wartość którą umieściłeś w content div do 15 znaków i użyć jako id
 
-// 20. Edytuj funkcje addItem tak aby nie pozwalala dodac duplikatu do listy items, mozesz tutaj uzyc np find() badz indexOf() guglnij obie funkcje
-//
 // 21. Dodaj funkcje “closeItem”, która poprzez event.target uzyska ID itemu i wypluje go w konsoli. Przypnij te funkcje do przyciskow zamknij
 
 //
-const closeItem = () => {
+const closeItem = (event) => {
   console.log(`klik`);
+  // let getId = event.target.id;
+  let getId = event.target.parentNode.id;
+  closedItems.push(getId);
+  console.log(closedItems);
 };
-allBtn.addEventListener("click", closeItem);
+
+const updateRenderedList = () => {};
+// 24. Dodaj w HTML div ktory bedzie kontenerem na wszystkie items
+//24+
+//25+
+//26

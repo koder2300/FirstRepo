@@ -43,7 +43,8 @@ body {
   width: 20%;
   display: float;
   position: absolute;
-  right: 210px;
+  right: 5px;
+  top: 0px;
   height: 40px;
 }
 .close {
@@ -51,4 +52,7 @@ body {
   width: 50vw;
   margin: 10px;
   padding: 5px;
+}
+.crossedOut {
+  text-decoration: line-through;
 }
