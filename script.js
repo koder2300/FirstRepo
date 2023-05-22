@@ -63,7 +63,10 @@ const closeItem = (event) => {
 
 const updateRenderedList = () => {
   itemsContainer.innerHTML = "";
-  closedItems.includes(items);
+
+  if (closedItems.includes(items)) {
+    items.classList.add("crossedOutLine");
+  }
 };
 
 // 17.+
