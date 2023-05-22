@@ -1,57 +1,56 @@
-const inputBlack = document.querySelector(".black");
-const buttonBlue = document.querySelector(".blue");
+const itemInput = document.querySelector(".black");
+const buttonAdd = document.querySelector(".blue");
 const closeBtn = document.querySelector(".close");
 // const allBtn = document.querySelectorAll(".renderPlus2");
-const items2 = document.querySelector(".container");
+const itemsContainer = document.querySelector(".container");
 const items = [];
 const closedItems = [];
+let uniqueChars;
 const addItem = () => {
-  console.log(inputBlack.value);
-  items.push(inputBlack.value);
+  console.log(itemInput.value);
+  items.push(itemInput.value);
   //usuwanie duplikatów
-  const uniqueArr = items.filter((c, index) => {
-    return items.indexOf(c) === index;
+
+  uniqueChars = items.filter((element, index) => {
+    return items.indexOf(element) === index;
   });
-  console.log(uniqueArr);
-  console.log(items);
-  //   return console.log(`Dodałeś item`);
+
+  console.log(uniqueChars);
 };
 
-buttonBlue.addEventListener("click", addItem);
+buttonAdd.addEventListener("click", addItem);
 
 const renderList = () => {
-  items2.innerHTML = "";
-  items.forEach((el) => {
+  itemsContainer.innerHTML = "";
+  uniqueChars.forEach((el) => {
     let newDiv = document.createElement("div");
-    let closeBtn2 = document.createElement("button");
+    let createBtn = document.createElement("button");
 
     const newContent = document.createTextNode(el);
-    const newContent2 = document.createTextNode("ZAMKNIJ");
+    const newContentClose = document.createTextNode("ZAMKNIJ");
 
     newDiv.className = "render";
-    newDiv.id = items.slice(0, 14);
+    newDiv.id = el.slice(0, 14);
     newDiv.appendChild(newContent);
-    closeBtn2.appendChild(newContent2);
+    createBtn.appendChild(newContentClose);
 
     newDiv.classList.add("renderPlus");
-    closeBtn2.classList.add("renderPlus2");
+    createBtn.classList.add("renderPlus2");
 
     // newDiv.appendChild(closeBtn2);
     // document.body.appendChild(newDiv);
-    newDiv.appendChild(closeBtn2);
-    items2.appendChild(newDiv);
-    closeBtn2.addEventListener("click", closeItem);
+    newDiv.appendChild(createBtn);
+    itemsContainer.appendChild(newDiv);
+    createBtn.addEventListener("click", closeItem);
   });
 };
 
-buttonBlue.addEventListener("click", renderList);
+buttonAdd.addEventListener("click", renderList);
 
 const closeAllItems = () => {
-  items.concat(closedItems);
+  closedItems = items.slice();
   console.log(closedItems);
 };
-
-// 21. Dodaj funkcje “closeItem”, która poprzez event.target uzyska ID itemu i wypluje go w konsoli. Przypnij te funkcje do przyciskow zamknij
 
 //
 const closeItem = (event) => {
@@ -62,4 +61,10 @@ const closeItem = (event) => {
   console.log(closedItems);
 };
 
-const updateRenderedList = () => {};
+const updateRenderedList = () => {
+  itemsContainer.innerHTML = "";
+};
+
+// 17.+
+// 18
+// 20.+
