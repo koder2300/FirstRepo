@@ -63,6 +63,7 @@ const closeItem = (event) => {
 
 const updateRenderedList = () => {
   itemsContainer.innerHTML = "";
+  closedItems.includes(items);
 };
 
 // 17.+
