@@ -5,6 +5,7 @@ const closeBtn = document.querySelector(".close");
 const itemsContainer = document.querySelector(".container");
 const closedItemsContainer = document.querySelector(".containerClosedItems");
 const exportBtn = document.querySelector(".export");
+const renderDiv = document.querySelector(".render");
 const items = [];
 const closedItems = [];
 const removedItems = [];
@@ -45,6 +46,7 @@ const renderList = () => {
     itemsContainer.appendChild(newDiv);
 
     createBtn.addEventListener("click", closeItem);
+    return createBtn;
   });
 };
 
@@ -53,8 +55,8 @@ buttonAdd.addEventListener("click", renderList);
 const closeAllItems = () => {
   closedItems = items.slice();
   console.log(closedItems);
-  items.forEach((el) => {
-    renderClosedItem(closedItems);
+  closedItems.forEach((el) => {
+    renderClosedItem(el);
   });
 };
 
@@ -62,13 +64,16 @@ const closeAllItems = () => {
 const closeItem = (event) => {
   console.log(`klik`);
 
-  let Id = event.target.parent.id;
+  // let Id = event.target.parent.id;
   let getId = event.target.parentNode.id;
   closedItems.push(getId);
   console.log(closedItems);
-  renderClosedItem(Id);
+  console.log(getId);
+  renderClosedItem(getId);
 };
-const renderClosedItem = (itemsContainer) => {
+
+const renderClosedItem = () => {
+  // let getId = event.target.parentNode.id;
   closedItemsContainer.appendChild(itemsContainer);
 
   let createBtnDelete = document.createElement("button");
