@@ -62,13 +62,14 @@ const closeAllItems = () => {
 const closeItem = (event) => {
   console.log(`klik`);
 
+  let Id = event.target.parent.id;
   let getId = event.target.parentNode.id;
   closedItems.push(getId);
   console.log(closedItems);
-  renderClosedItem();
+  renderClosedItem(Id);
 };
-const renderClosedItem = (getId) => {
-  closedItemsContainer.appendChild(getId);
+const renderClosedItem = (itemsContainer) => {
+  closedItemsContainer.appendChild(itemsContainer);
 
   let createBtnDelete = document.createElement("button");
   const newContent = document.createTextNode("usuń");
