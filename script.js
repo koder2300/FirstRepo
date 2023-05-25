@@ -76,11 +76,11 @@ const closeItem = (event) => {
   closedItems.push(itemToBeClosed);
   console.log(closedItems);
   console.log(itemToBeClosed);
-  renderClosedItem(itemToBeClosed);
+  renderClosedItem(event.target.parentNode.id);
 };
 
-const renderClosedItem = (id) => {
-  const closedItemDiv = document.querySelector("#id");
+const renderClosedItem = (closedItemDiv) => {
+  // const closedItemDiv = document.querySelector("#id");
   console.log(closedItemDiv);
   // brakuje odbioru parametru id, który przekazujesz w 72 linijce
   // let getId = event.target.parentNode.id; // to było dobrze, nie powinno być zakomentowane, zła nazwa zmiennej, powinieneś ją nazwać np "itemToBeClosed", ponieważ w tej zmiennej chwytasz div, który masz przenieść do closedItemsContainer
