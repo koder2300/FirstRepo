@@ -93,7 +93,7 @@ const renderClosedItem = (closedItemDiv) => {
   //
   // Usuwanie przycisku i przypięcie deleteBtn
   //
-  closedItemDiv.removeChild(firstElementChild);
+  closedItemDiv.removeChild(closedItemDiv.firstElementChild);
   closedItemDiv.appendChild(deleteBtn);
   // to wszystko z createBtnDelete jest dobrze, powinieneś teraz w divie, który masz w zmiennej "itemToBeClosed" usunąć przycisk zamknij i przypiąć do niego nowy przycisk - createBtnDelete
 };
