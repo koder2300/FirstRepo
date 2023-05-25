@@ -87,9 +87,9 @@ const renderClosedItem = () => { // brakuje odbioru parametru id, który przekaz
 
 const updateRenderedList = () => {
   itemsContainer.innerHTML = "";
-
-  if (closedItems.includes(items)) {
-    items.classList.add("crossedOutLine");
+  
+  if (closedItems.includes(items)) { // tu jest błąd logiczny, powinna być pętla, która przejdzie po items i każdy po kolei sprawdzi poprzez closedItems.includes()
+    items.classList.add("crossedOutLine"); // items to tablica stringów, jak chcesz wywołać "classList.add()" na stringu?
   }
 };
 const obj = {};
