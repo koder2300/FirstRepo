@@ -56,7 +56,9 @@ const closeAllItems = () => {
   closedItems = items.slice();
   console.log(closedItems);
   closedItems.forEach((el) => {
-    renderClosedItem(el);
+    renderClosedItem(el); // tutaj nie powinien iść el tylko ID tego elementu - musisz powtórzyć kod z 38 linijki
+    // czyli renderClosedItem(el.slice(0, 14))
+    // ponieważ funcja renderClosedItem przyjmuje jako argument ID elementu który chwytasz w 78 linijce
   });
 };
 
@@ -72,14 +74,15 @@ const closeItem = (event) => {
   renderClosedItem(getId);
 };
 
-const renderClosedItem = () => {
-  // let getId = event.target.parentNode.id;
-  closedItemsContainer.appendChild(itemsContainer);
+const renderClosedItem = () => { // brakuje odbioru parametru id, który przekazujesz w 72 linijce
+  // let getId = event.target.parentNode.id; // to było dobrze, nie powinno być zakomentowane, zła nazwa zmiennej, powinieneś ją nazwać np "itemToBeClosed", ponieważ w tej zmiennej chwytasz div, który masz przenieść do closedItemsContainer
+  closedItemsContainer.appendChild(itemsContainer); // tutaj do kontenera na closedItems przypisujesz kontener na items, a powinieneś tutaj przypisa do kontenera na closedItems item, który zamknąłeś przyciskiem zamknij
 
-  let createBtnDelete = document.createElement("button");
-  const newContent = document.createTextNode("usuń");
+  let createBtnDelete = document.createElement("button"); // funkcja createElement zwraca element, nie zwraca tworzenia elementu, dlatego ta zmienna powinna nazywać się "deleteBtn"
+  const newContent = document.createTextNode("usuń"); // zmienna newContent mało mówi, do czego to jest content, lepiej byłoby "deleteBtnContent"
   createBtnDelete.appendChild(newContent);
   createBtnDelete.classList.add("renderPlus2");
+  // to wszystko z createBtnDelete jest dobrze, powinieneś teraz w divie, który masz w zmiennej "itemToBeClosed" usunąć przycisk zamknij i przypiąć do niego nowy przycisk - createBtnDelete
 };
 
 const updateRenderedList = () => {
