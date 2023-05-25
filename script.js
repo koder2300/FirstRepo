@@ -16,7 +16,7 @@ const addItem = () => {
   items.push(itemInput.value);
   //usuwanie duplikatów
 
-  uniqueChars = items.filter((element, index) => {
+  uniqueChars = items.filter((element, index) => { // na dobrą sprawę zmiennna uniqueChars nie jest potrzebna, mogłoby równie dobrze być "items = items.filter........." i wtedy renderować normalnie items zamiast uniqueChar w funkcji renderItems
     return items.indexOf(element) === index;
   });
 
