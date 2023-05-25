@@ -76,7 +76,7 @@ const closeItem = (event) => {
   closedItems.push(itemToBeClosed);
   console.log(closedItems);
   console.log(itemToBeClosed);
-  renderClosedItem(event.target.parentNode.id);
+  renderClosedItem(event.target.parentNode);
 };
 
 const renderClosedItem = (closedItemDiv) => {
@@ -93,8 +93,8 @@ const renderClosedItem = (closedItemDiv) => {
   //
   // Usuwanie przycisku i przypięcie deleteBtn
   //
-  itemToBeClosed.removeChild(firstElementChild);
-  itemToBeClosed.appendChild(deleteBtn);
+  closedItemDiv.removeChild(firstElementChild);
+  closedItemDiv.appendChild(deleteBtn);
   // to wszystko z createBtnDelete jest dobrze, powinieneś teraz w divie, który masz w zmiennej "itemToBeClosed" usunąć przycisk zamknij i przypiąć do niego nowy przycisk - createBtnDelete
 };
 
@@ -135,3 +135,5 @@ exportBtn.addEventListener("click", downloadExportedItems);
 //33  ??
 //34+
 //35+
+
+// const closedItemDiv = document.querySelector(`#${id}`)  tutaj jest chyba błąd bo pobiera mi wartość null chyba invalid syntax error nawet jak zrobię const closedItemDiv = document.querySelector(`#id`) dalej wtedy -> Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. A jak robię tą wersję skróconą też jest => Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
