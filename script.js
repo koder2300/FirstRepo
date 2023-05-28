@@ -1,5 +1,6 @@
+const containerWithMovies = document.querySelector(".containerMovies");
 const itemInput = document.querySelector(".black");
-const buttonAdd = document.querySelector(".blue");
+const buttonAdd = document.querySelector(".btn-primary");
 const closeBtn = document.querySelector(".close");
 // const allBtn = document.querySelectorAll(".renderPlus2");
 const itemsContainer = document.querySelector(".container");
@@ -44,13 +45,12 @@ const renderList = () => {
     createBtn.appendChild(newContentClose);
 
     newDiv.classList.add("renderPlus");
-    createBtn.classList.add("renderPlus2");
+    createBtn.classList.add("secondary");
 
     newDiv.appendChild(createBtn);
     itemsContainer.appendChild(newDiv);
 
     createBtn.addEventListener("click", closeItem);
-    return createBtn;
   });
 };
 
@@ -71,25 +71,33 @@ const closeAllItems = () => {
 const closeItem = (event) => {
   console.log(`klik`);
 
-  // let Id = event.target.parent.id;
   let itemToBeClosed = event.target.parentNode.id;
+
   closedItems.push(itemToBeClosed);
   console.log(closedItems);
   console.log(itemToBeClosed);
   renderClosedItem(event.target.parentNode);
 };
-
+let newEl;
 const renderClosedItem = (closedItemDiv) => {
-  // const closedItemDiv = document.querySelector("#id");
-  console.log(closedItemDiv);
+  closedItemDiv.filter((element) => {
+    newEl.id = element.slice();
+    newEl.event.target.parentNode.id;
+  });
+
+  //
   // brakuje odbioru parametru id, który przekazujesz w 72 linijce
   // let getId = event.target.parentNode.id; // to było dobrze, nie powinno być zakomentowane, zła nazwa zmiennej, powinieneś ją nazwać np "itemToBeClosed", ponieważ w tej zmiennej chwytasz div, który masz przenieść do closedItemsContainer
   closedItemsContainer.appendChild(closedItemDiv); // tutaj do kontenera na closedItems przypisujesz kontener na items, a powinieneś tutaj przypisa do kontenera na closedItems item, który zamknąłeś przyciskiem zamknij
+  closedItemDiv.classList.add("crossedOutLine");
 
-  let deleteBtn = document.createElement("button"); // funkcja createElement zwraca element, nie zwraca tworzenia elementu, dlatego ta zmienna powinna nazywać się "deleteBtn"
+  let deleteBtn = document.createElement("button");
+  // funkcja createElement zwraca element, nie zwraca tworzenia elementu, dlatego ta zmienna powinna nazywać się "deleteBtn"
   const deleteBtnContent = document.createTextNode("usuń"); // zmienna newContent mało mówi, do czego to jest content, lepiej byłoby "deleteBtnContent"
   deleteBtn.appendChild(deleteBtnContent);
-  deleteBtn.classList.add("renderPlus2");
+  deleteBtn.classList.add("danger");
+  deleteBtn.classList.add("btn");
+  // deleteBtn.classList.add("crossedOutLine");
   //
   // Usuwanie przycisku i przypięcie deleteBtn
   //
@@ -97,23 +105,33 @@ const renderClosedItem = (closedItemDiv) => {
   closedItemDiv.appendChild(deleteBtn);
   // to wszystko z createBtnDelete jest dobrze, powinieneś teraz w divie, który masz w zmiennej "itemToBeClosed" usunąć przycisk zamknij i przypiąć do niego nowy przycisk - createBtnDelete
 };
+// renderClosedItem();
+let itemId;
 
 const updateRenderedList = () => {
   itemsContainer.innerHTML = "";
+  console.log(`klik`);
   for (const item of items) {
-    closedItems.includes(item);
-    item.classList.add("crossedOutLine");
+    itemId.id = item.slice(0, 14);
+    if (closedItems.includes(itemId)) {
+      console.log(itemId);
+      itemId.classList.add("crossedOutLine");
+    }
   }
+
   // if (closedItems.includes(items)) {
   //   // tu jest błąd logiczny, powinna być pętla, która przejdzie po items i każdy po kolei sprawdzi poprzez closedItems.includes()
   //   items.classList.add("crossedOutLine"); // items to tablica stringów, jak chcesz wywołać "classList.add()" na stringu?
   // }
 };
+updateRenderedList();
+//
+
 const obj = {};
 const exportItems = () => {
   obj.items = items;
   obj.closedItems = closedItems;
-  console.log(obj);
+  // console.log(obj);
 };
 exportItems();
 
@@ -123,17 +141,9 @@ const downloadExportedItems = () => {
 };
 exportBtn.addEventListener("click", downloadExportedItems);
 
-// 17.+
-// 18+
-// 20.+
-// 27.+
-//28.+
-//29  +??
-//30+
-//31+
-//32+
-//33  ??
-//34+
-//35+
+// 29b. Edytuj funkcję renderClosedItem tak, aby przypinała również do przeniesionego divu klasę odpowiadającą za przekreślenie tekstu
 
-// const closedItemDiv = document.querySelector(`#${id}`)  tutaj jest chyba błąd bo pobiera mi wartość null chyba invalid syntax error nawet jak zrobię const closedItemDiv = document.querySelector(`#id`) dalej wtedy -> Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. A jak robię tą wersję skróconą też jest => Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
+// w powyższej funkcji filter jako warunku użyj event.target.parentNode.id oraz zbudowanego ID ze zmiennej el
+// 36.?
+// 29b
+//29c

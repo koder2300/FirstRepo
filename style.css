@@ -7,13 +7,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
-.blue {
-  padding: 10px;
-  border-radius: 10%;
-  color: white;
-  background-color: blue;
-  margin: 10px;
-}
+
 .black {
   padding: 10px;
   border-radius: 10px;
@@ -39,13 +33,19 @@ body {
   margin: 10px;
 }
 
-.renderPlus2 {
+.secondary {
   width: 20%;
   display: float;
   position: absolute;
-  right: 5px;
+  right: 0px;
   top: 0px;
   height: 40px;
+  background-color: gray;
+  color: white;
+  border-radius: 10%;
+}
+.secondary:hover {
+  background-color: rgb(99, 98, 98);
 }
 .close {
   background-color: white;
@@ -55,4 +55,29 @@ body {
 }
 .crossedOutLine {
   text-decoration: line-through;
+}
+.btn {
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px;
+}
+.btn-primary {
+  color: white;
+  background-color: blue;
+}
+.btn-primary:hover {
+  background-color: rgb(5, 5, 194);
+}
+.danger {
+  background-color: red;
+  width: 20%;
+  display: float;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  height: 40px;
+  color: white;
+}
+.danger:hover {
+  background-color: rgb(183, 2, 2);
 }
