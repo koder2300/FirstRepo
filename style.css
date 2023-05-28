@@ -10,9 +10,14 @@ body {
 
 .black {
   padding: 10px;
+  background-color: white;
   border-radius: 10px;
   color: black;
   width: 300px;
+}
+.black:focus {
+  border: 3px solid rgb(117, 117, 246);
+  outline: none;
 }
 .render {
   padding: 10px;
@@ -43,27 +48,47 @@ body {
   background-color: gray;
   color: white;
   border-radius: 10%;
+  border: none;
 }
 .secondary:hover {
   background-color: rgb(99, 98, 98);
 }
-.close {
+.btn-light {
   background-color: white;
   width: 50vw;
   margin: 10px;
   padding: 5px;
+  color: black;
+  border: none;
+  border-radius: 10px;
+}
+.btn-light:hover {
+  background-color: rgb(204, 204, 204);
+}
+.btn-dark {
+  background-color: black;
+  width: 50vw;
+  margin: 10px;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.btn-dark:hover {
+  background-color: rgba(0, 0, 0, 0.756);
 }
 .crossedOutLine {
   text-decoration: line-through;
 }
 .btn {
-  border-radius: 10%;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
 }
 .btn-primary {
   color: white;
   background-color: blue;
+  border: none;
 }
 .btn-primary:hover {
   background-color: rgb(5, 5, 194);
@@ -73,10 +98,12 @@ body {
   width: 20%;
   display: float;
   position: absolute;
-  right: -10px;
+  right: -15px;
   top: -10px;
   height: 40px;
   color: white;
+  border: none;
+  border-radius: 10px;
 }
 .danger:hover {
   background-color: rgb(183, 2, 2);

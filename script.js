@@ -8,7 +8,7 @@ const closedItemsContainer = document.querySelector(".containerClosedItems");
 const exportBtn = document.querySelector(".export");
 const renderDiv = document.querySelector(".render");
 let items = [];
-const closedItems = [];
+let closedItems = [];
 const removedItems = [];
 const deleteItemsContainer = document.querySelector(".deleteItems");
 // let uniqueChars;
@@ -60,50 +60,43 @@ const closeAllItems = () => {
   closedItems = items.slice();
   console.log(closedItems);
   closedItems.forEach((el) => {
-    renderClosedItem(el.slice(0, 14)); // tutaj nie powinien iść el tylko ID tego elementu - musisz powtórzyć kod z 38 linijki
-    // czyli renderClosedItem(el.slice(0, 14))
-    // ponieważ funcja renderClosedItem przyjmuje jako argument ID elementu który chwytasz w 78 linijce
+    renderClosedItem(el.slice(0, 14));
   });
+  items.splice(0, items.length);
+  console.log(items);
 };
-
+closeAllItems();
 //
 
 const closeItem = (event) => {
   console.log(`klik`);
 
   let itemToBeClosed = event.target.parentNode.id;
-
+  items = items.filter((el) => {
+    return event.target.parentNode.id !== el.slice(0, 14);
+  });
   closedItems.push(itemToBeClosed);
+  closedItems.shift();
   console.log(closedItems);
   console.log(itemToBeClosed);
   renderClosedItem(event.target.parentNode);
 };
+
 let newEl;
 const renderClosedItem = (closedItemDiv) => {
-  closedItemDiv.filter((element) => {
-    newEl.id = element.slice();
-    newEl.event.target.parentNode.id;
-  });
-
-  //
-  // brakuje odbioru parametru id, który przekazujesz w 72 linijce
-  // let getId = event.target.parentNode.id; // to było dobrze, nie powinno być zakomentowane, zła nazwa zmiennej, powinieneś ją nazwać np "itemToBeClosed", ponieważ w tej zmiennej chwytasz div, który masz przenieść do closedItemsContainer
-  closedItemsContainer.appendChild(closedItemDiv); // tutaj do kontenera na closedItems przypisujesz kontener na items, a powinieneś tutaj przypisa do kontenera na closedItems item, który zamknąłeś przyciskiem zamknij
+  closedItemsContainer.appendChild(closedItemDiv);
   closedItemDiv.classList.add("crossedOutLine");
 
   let deleteBtn = document.createElement("button");
-  // funkcja createElement zwraca element, nie zwraca tworzenia elementu, dlatego ta zmienna powinna nazywać się "deleteBtn"
-  const deleteBtnContent = document.createTextNode("usuń"); // zmienna newContent mało mówi, do czego to jest content, lepiej byłoby "deleteBtnContent"
+
+  const deleteBtnContent = document.createTextNode("usuń");
   deleteBtn.appendChild(deleteBtnContent);
   deleteBtn.classList.add("danger");
   deleteBtn.classList.add("btn");
   // deleteBtn.classList.add("crossedOutLine");
   //
-  // Usuwanie przycisku i przypięcie deleteBtn
-  //
   closedItemDiv.removeChild(closedItemDiv.firstElementChild);
   closedItemDiv.appendChild(deleteBtn);
-  // to wszystko z createBtnDelete jest dobrze, powinieneś teraz w divie, który masz w zmiennej "itemToBeClosed" usunąć przycisk zamknij i przypiąć do niego nowy przycisk - createBtnDelete
 };
 // renderClosedItem();
 let itemId;
@@ -118,11 +111,6 @@ const updateRenderedList = () => {
       itemId.classList.add("crossedOutLine");
     }
   }
-
-  // if (closedItems.includes(items)) {
-  //   // tu jest błąd logiczny, powinna być pętla, która przejdzie po items i każdy po kolei sprawdzi poprzez closedItems.includes()
-  //   items.classList.add("crossedOutLine"); // items to tablica stringów, jak chcesz wywołać "classList.add()" na stringu?
-  // }
 };
 updateRenderedList();
 //
@@ -131,7 +119,7 @@ const obj = {};
 const exportItems = () => {
   obj.items = items;
   obj.closedItems = closedItems;
-  // console.log(obj);
+  console.log(obj);
 };
 exportItems();
 
@@ -141,9 +129,15 @@ const downloadExportedItems = () => {
 };
 exportBtn.addEventListener("click", downloadExportedItems);
 
-// 29b. Edytuj funkcję renderClosedItem tak, aby przypinała również do przeniesionego divu klasę odpowiadającą za przekreślenie tekstu
-
-// w powyższej funkcji filter jako warunku użyj event.target.parentNode.id oraz zbudowanego ID ze zmiennej el
 // 36.?
-// 29b
-//29c
+// 29b  +
+//29c +
+//30+
+//30b+
+//32+
+//33+
+//34+
+//35+
+//36+
+//37 ?? błąd
+//39 +
