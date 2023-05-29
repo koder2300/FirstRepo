@@ -55,7 +55,7 @@ buttonAdd.addEventListener("click", renderList);
 const closeAllItems = () => {
   closedItems = items.slice();
   console.log(closedItems);
-  let newDivEl;
+  // let newDivEl;
   closedItems.forEach((el) => {
     // newDivEl.id = el.slice(0, 14);
     // newDivEl.appendChild(btnCloseAll);
