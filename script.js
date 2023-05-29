@@ -89,7 +89,9 @@ const renderClosedItem = (closedItemDiv) => {
   closedItemDiv.classList.add("crossedOutLine");
 
   let deleteBtn = document.createElement("button");
-
+  deleteBtn.addEventListener("click", removedItem);
+  document.body.appendChild(deleteBtn);
+  //
   const deleteBtnContent = document.createTextNode("usuń");
   deleteBtn.appendChild(deleteBtnContent);
   deleteBtn.classList.add("danger");
@@ -122,6 +124,26 @@ const exportItems = () => {
   obj.items = items;
   obj.closedItems = closedItems;
   console.log(obj);
+  // JSON.parse(obj);
+  const jsonObj = JSON.stringify(obj);
+  console.log(jsonObj);
+
+  function download(filename, text) {
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", filename);
+
+    element.style.display = "none";
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+  download(JSON, jsonObj);
 };
 exportItems();
 
@@ -129,15 +151,16 @@ const downloadExportedItems = () => {
   const string = JSON.stringify(obj);
   console.log(string);
 };
+
 exportBtn.addEventListener("click", downloadExportedItems);
 
-// let btnDanger = document.querySelector(".danger");
-const removedItem = (e) => {
-  const changeVar = e.target.id;
-  console.log(changeVar);
-  return changeVar;
+const removedItem = () => {
+  deleteBtn.push(removedItems);
+  closedItems.forEach((el) => {
+    el.splice(0, el.length);
+  });
 };
-// btnDanger.addEventListener("click", removedItem);
+// removedItem();
 
 // 36.?
 // 29b  +
@@ -149,8 +172,10 @@ const removedItem = (e) => {
 //34+
 //35+
 //36+
-//37 ?? błąd
+//37 ??
 //39+
 //40
+
+// 37. Edytuj funkcje exportItems tak aby obiekt który w niej generujesz i wrzucasz do console.log był pobierany w formacie pliku json
 
 // 40. Dodaj funkcję removeItem, która po wciśnięciu przycisku usuń przy danym divie doda ten item do tablicy removedItems, usunie go z tablicy closedItems i wyrenderuje w kontenerze na usunięte items. Przycisk usuń ma się nie pojawić. Stylowanie ma być na 50% opacity całego div.
