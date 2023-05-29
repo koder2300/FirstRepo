@@ -57,14 +57,12 @@ const closeAllItems = () => {
   console.log(closedItems);
   // let newDivEl;
   closedItems.forEach((el) => {
-    // newDivEl.id = el.slice(0, 14);
-    // newDivEl.appendChild(btnCloseAll);
-    console.log(el.slice(0, 14));
-    renderClosedItem(el.slice(0, 14));
+    renderClosedItem(itemsContainer);
   });
 
   console.log(items);
   items.splice(0, items.length);
+  console.log(items);
   closedItemsContainer.remove();
   itemsContainer.remove();
 };
