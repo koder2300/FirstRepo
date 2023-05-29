@@ -54,11 +54,9 @@ buttonAdd.addEventListener("click", renderList);
 
 const closeAllItems = () => {
   closedItems = items.slice();
-  console.log(closedItems);
-  // let newDivEl;
-  closedItems.forEach((el) => {
-    renderClosedItem(itemsContainer);
-  });
+  renderClosedItem(itemsContainer);
+  // closedItems.forEach((el) => {
+  // });
 
   console.log(items);
   items.splice(0, items.length);
