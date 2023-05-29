@@ -54,15 +54,16 @@ buttonAdd.addEventListener("click", renderList);
 
 const closeAllItems = () => {
   closedItems = items.slice();
-  renderClosedItem(itemsContainer);
-  // closedItems.forEach((el) => {
-  // });
+  console.log(itemsContainer);
+  closedItems.forEach((el) => {
+    renderClosedItem(itemsContainer.firstChild);
+  });
 
   console.log(items);
   items.splice(0, items.length);
   console.log(items);
-  closedItemsContainer.remove();
-  itemsContainer.remove();
+  // closedItemsContainer.remove();
+  // itemsContainer.remove();
 };
 
 //
@@ -93,26 +94,27 @@ const renderClosedItem = (closedItemDiv) => {
   deleteBtn.appendChild(deleteBtnContent);
   deleteBtn.classList.add("danger");
   deleteBtn.classList.add("btn");
-  // deleteBtn.classList.add("crossedOutLine");
-  //
   closedItemDiv.removeChild(closedItemDiv.firstElementChild);
   closedItemDiv.appendChild(deleteBtn);
 };
 // renderClosedItem();
 let itemId;
 
-const updateRenderedList = () => {
+const updateRenderedList = (event) => {
   itemsContainer.innerHTML = "";
   console.log(`klik`);
   for (const item of items) {
+    console.log(item);
     itemId.id = item.slice(0, 14);
+    item = event.target.parentNode.id;
+    console.log(item);
     if (closedItems.includes(itemId)) {
       console.log(itemId);
       itemId.classList.add("crossedOutLine");
     }
   }
 };
-updateRenderedList();
+
 //
 
 const obj = {};
@@ -129,10 +131,18 @@ const downloadExportedItems = () => {
 };
 exportBtn.addEventListener("click", downloadExportedItems);
 
+// let btnDanger = document.querySelector(".danger");
+const removedItem = (e) => {
+  const changeVar = e.target.id;
+  console.log(changeVar);
+  return changeVar;
+};
+// btnDanger.addEventListener("click", removedItem);
+
 // 36.?
 // 29b  +
 //29c +
-//30+
+//30 +
 //30b+
 //32+
 //33+
@@ -140,4 +150,7 @@ exportBtn.addEventListener("click", downloadExportedItems);
 //35+
 //36+
 //37 ?? błąd
-//39 +
+//39+
+//40
+
+// 40. Dodaj funkcję removeItem, która po wciśnięciu przycisku usuń przy danym divie doda ten item do tablicy removedItems, usunie go z tablicy closedItems i wyrenderuje w kontenerze na usunięte items. Przycisk usuń ma się nie pojawić. Stylowanie ma być na 50% opacity całego div.
