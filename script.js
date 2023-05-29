@@ -152,7 +152,7 @@ const downloadExportedItems = () => {
   console.log(string);
 };
 
-exportBtn.addEventListener("click", downloadExportedItems);
+exportBtn.addEventListener("click", exportItems);
 
 const removedItem = () => {
   deleteBtn.push(removedItems);
@@ -172,7 +172,7 @@ const removedItem = () => {
 //34+
 //35+
 //36+
-//37 ??
+//37 +
 //39+
 //40
 
