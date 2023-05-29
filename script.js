@@ -7,6 +7,7 @@ const itemsContainer = document.querySelector(".container");
 const closedItemsContainer = document.querySelector(".containerClosedItems");
 const exportBtn = document.querySelector(".export");
 const renderDiv = document.querySelector(".render");
+const btnCloseAll = document.querySelector(".btn-dark");
 let items = [];
 let closedItems = [];
 const removedItems = [];
@@ -20,11 +21,6 @@ const addItem = () => {
     return items.indexOf(element) === index;
   });
 
-  // uniqueChars = items.filter((element, index) => { // na dobrą sprawę zmiennna uniqueChars nie jest potrzebna, mogłoby równie dobrze być "items = items.filter........." i wtedy renderować normalnie items zamiast uniqueChar w funkcji renderItems
-  //   return items.indexOf(element) === index;
-  // });
-
-  // console.log(uniqueChars);
   console.log(items);
 };
 
@@ -59,14 +55,22 @@ buttonAdd.addEventListener("click", renderList);
 const closeAllItems = () => {
   closedItems = items.slice();
   console.log(closedItems);
+  let newDivEl;
   closedItems.forEach((el) => {
+    // newDivEl.id = el.slice(0, 14);
+    // newDivEl.appendChild(btnCloseAll);
+    console.log(el.slice(0, 14));
     renderClosedItem(el.slice(0, 14));
   });
-  items.splice(0, items.length);
+
   console.log(items);
+  items.splice(0, items.length);
+  closedItemsContainer.remove();
+  itemsContainer.remove();
 };
-closeAllItems();
+
 //
+btnCloseAll.addEventListener("click", closeAllItems);
 
 const closeItem = (event) => {
   console.log(`klik`);
