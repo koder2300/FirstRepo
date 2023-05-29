@@ -145,7 +145,6 @@ const exportItems = () => {
   }
   download(JSON, jsonObj);
 };
-exportItems();
 
 const downloadExportedItems = () => {
   const string = JSON.stringify(obj);
