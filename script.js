@@ -84,13 +84,14 @@ const closeItem = (event) => {
 };
 
 let newEl;
+let deleteBtn;
 const renderClosedItem = (closedItemDiv) => {
   closedItemsContainer.appendChild(closedItemDiv);
   closedItemDiv.classList.add("crossedOutLine");
 
-  let deleteBtn = document.createElement("button");
+  deleteBtn = document.createElement("button");
   deleteBtn.addEventListener("click", removedItem);
-  document.body.appendChild(deleteBtn);
+  // document.body.appendChild(deleteBtn);
   //
   const deleteBtnContent = document.createTextNode("usuń");
   deleteBtn.appendChild(deleteBtnContent);
@@ -152,12 +153,21 @@ const downloadExportedItems = () => {
 };
 
 exportBtn.addEventListener("click", exportItems);
+let itemIdDel;
+let itemIdEl;
+const removedItem = (event) => {
+  console.log(`klik`);
 
-const removedItem = () => {
-  deleteBtn.push(removedItems);
-  closedItems.forEach((el) => {
-    el.splice(0, el.length);
-  });
+  itemIdEl = event.target.parentNode.id;
+
+  removedItems.push(itemIdEl);
+  console.log(removedItems);
+  removedItems.push(itemIdEl);
+  // itemIdEl.id = items.slice(0, 14);
+  // console.log(itemIdEl);
+  console.log(closedItems);
+  closedItems.splice(0, closedItems.length);
+  closedItemsContainer.removeChild(closedItemsContainer.firstElementChild);
 };
 // removedItem();
 
@@ -174,7 +184,5 @@ const removedItem = () => {
 //37 +
 //39+
 //40
-
-// 37. Edytuj funkcje exportItems tak aby obiekt który w niej generujesz i wrzucasz do console.log był pobierany w formacie pliku json
 
 // 40. Dodaj funkcję removeItem, która po wciśnięciu przycisku usuń przy danym divie doda ten item do tablicy removedItems, usunie go z tablicy closedItems i wyrenderuje w kontenerze na usunięte items. Przycisk usuń ma się nie pojawić. Stylowanie ma być na 50% opacity całego div.
