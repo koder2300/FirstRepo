@@ -183,6 +183,6 @@ const removedItem = (event) => {
 //36+
 //37 +
 //39+
-//40
+//40+
 
 // 40. Dodaj funkcję removeItem, która po wciśnięciu przycisku usuń przy danym divie doda ten item do tablicy removedItems, usunie go z tablicy closedItems i wyrenderuje w kontenerze na usunięte items. Przycisk usuń ma się nie pojawić. Stylowanie ma być na 50% opacity całego div.
