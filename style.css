@@ -86,6 +86,7 @@ body {
   margin: 10px;
 }
 .btn-primary {
+  width: 10vw;
   color: white;
   background-color: blue;
   border: none;
@@ -111,27 +112,50 @@ body {
 
 @media only screen and (max-width: 480px) {
   .line {
-    width: 100vw;
+    width: 60vw;
   }
   .btn-dark {
-    width: 100vw;
-    margin: 10px;
+    width: 60vw;
+    padding: 0 100px;
   }
   .btn-light {
-    width: 100vw;
-    margin: 10px;
+    width: 60vw;
+    padding: 0 100px;
   }
   .render {
-    width: 100vw;
-    margin: 10px;
+    width: 60vw;
+    padding: 0 100px;
+  }
+  .contInpBtn {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary {
+    text-align: center;
+    width: 10vw;
+    flex-wrap: nowrap;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .contInpBtn {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary {
+    text-align: center;
+    width: 50vw;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -140,5 +164,45 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .btn-primary {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contInpBtn {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary {
+    width: 10vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contInpBtn {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary {
+    width: 10vw;
   }
 }

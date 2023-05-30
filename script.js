@@ -171,7 +171,7 @@ const removedItem = (event) => {
 };
 // removedItem();
 
-// 36.?
+// 36.+
 // 29b  +
 //29c +
 //30 +
