@@ -155,7 +155,7 @@ body {
   }
   .btn-primary {
     text-align: center;
-    width: 50vw;
+    width: 10vw;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -167,6 +167,7 @@ body {
   }
   .btn-primary {
     text-align: center;
+    width: 10vw;
   }
 }
 
