@@ -1,53 +1,64 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
 }
-body {
-  width: 100vw;
-  height: 100vh;
+.containerAll {
+  display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 2rem;
+  font-size: 30px;
 }
-
-.black {
+.containerItems {
+  display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.contInpBtn {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+  height: 70px;
+  /* font-size: 30px; */
+}
+.blackInput {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
   color: black;
   width: 300px;
 }
-.black:focus {
+.blackInput:focus {
   border: 3px solid rgb(117, 117, 246);
   outline: none;
 }
 .render {
+  height: 50px;
   padding: 10px;
   border-radius: 10px;
   border-color: grey;
   margin-bottom: 10px;
+  text-align: start;
   position: relative;
-}
-.renderPlus {
   border: 3px solid red;
-  width: 50vw;
 }
 .line {
   height: 2px;
   background: black;
   border: 0px;
-  width: 50vw;
-  margin: 10px;
 }
-
 .secondary {
   width: 20%;
-  display: float;
   position: absolute;
-  right: 0px;
+  right: -2px;
   top: 0px;
-  height: 40px;
+  height: 70px;
   background-color: gray;
   color: white;
-  border-radius: 10%;
+  border-radius: 10px;
   border: none;
 }
 .secondary:hover {
@@ -55,9 +66,10 @@ body {
 }
 .btn-light {
   background-color: white;
-  width: 50vw;
+  width: 800px;
   margin: 10px;
   padding: 5px;
+  height: 70px;
   color: black;
   border: none;
   border-radius: 10px;
@@ -67,7 +79,8 @@ body {
 }
 .btn-dark {
   background-color: black;
-  width: 50vw;
+  width: 800px;
+  height: 70px;
   margin: 10px;
   padding: 5px;
   color: white;
@@ -80,13 +93,11 @@ body {
 .crossedOutLine {
   text-decoration: line-through;
 }
-.btn {
+
+.btn-primary {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-}
-.btn-primary {
-  width: 10vw;
   color: white;
   background-color: blue;
   border: none;
@@ -96,13 +107,11 @@ body {
 }
 .danger {
   background-color: red;
-
   width: 20%;
-  display: float;
   position: absolute;
-  right: -13px;
-  top: -10px;
-  height: 40px;
+  right: -2px;
+  top: 0px;
+  height: 70px;
   color: white;
   border: none;
   border-radius: 10px;
@@ -111,125 +120,31 @@ body {
   background-color: rgb(183, 2, 2);
   /* background-color: red; */
 }
-
-@media only screen and (max-width: 480px) {
-  .line {
-    width: 60vw;
-  }
-  .btn-dark {
-    width: 60vw;
-    padding: 0 100px;
-  }
-  .btn-light {
-    width: 60vw;
-    padding: 0 100px;
-  }
-  .render {
-    width: 60vw;
-    padding: 0 100px;
-  }
-  .contInpBtn {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    text-align: center;
-    width: 10vw;
-    flex-wrap: nowrap;
-  }
-}
-@media only screen and (max-width: 768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .contInpBtn {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    text-align: center;
-    width: 10vw;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    text-align: center;
-    width: 10vw;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .contInpBtn {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    width: 10vw;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .contInpBtn {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    width: 10vw;
-  }
-}
 .classOpacity {
   opacity: 50%;
 }
-.deleteItems {
-  width: 50vw;
-  height: 100px;
-}
 .dangerDel {
   background-color: red;
-
   width: 20%;
   display: float;
   position: absolute;
   right: -1px;
   top: 0px;
-  height: 40px;
+  /* height: 40px; */
   color: white;
   border: none;
   border-radius: 10px;
 }
 .dangerDel:hover {
   background-color: rgb(183, 2, 2);
-  /* background-color: red; */
+}
+
+@media only screen and (max-width: 480px) {
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 1440px) {
 }

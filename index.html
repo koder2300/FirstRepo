@@ -8,23 +8,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="contInpBtn">
-      <input
-        type="text"
-        class="black"
-        placeholder="Wpisz co masz do zrobienia"
-      />
-      <button class="btn btn-primary">Dodaj +</button>
+    <div class="containerAll">
+      <div class="contInpBtn">
+        <input
+          type="text"
+          class="blackInput"
+          placeholder="Wpisz co masz do zrobienia"
+        />
+        <button class="btn-primary">Dodaj +</button>
+      </div>
+      <div class="containerItems">
+        <div class="line"></div>
+        <button class="btn-dark">zamknij wszystkie</button>
+        <button class="btn-light export">exportuj wszystkie</button>
+        <div class="container"></div>
+        <div class="line"></div>
+        <div class="containerClosedItems"></div>
+        <div class="line"></div>
+        <div class="deleteItems"></div>
+      </div>
     </div>
-    <div class="line"></div>
-    <button class="btn-dark">zamknij wszystkie</button>
-    <button class="btn-light export">exportuj wszystkie</button>
-    <div class="container"></div>
-    <div class="line"></div>
-    <div class="containerClosedItems"></div>
-    <div class="line"></div>
-    <div class="deleteItems"></div>
-
     <script src="script.js"></script>
   </body>
 </html>

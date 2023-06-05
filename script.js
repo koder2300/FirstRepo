@@ -1,33 +1,41 @@
-// const containerWithMovies = document.querySelector(".containerMovies");
-const itemInput = document.querySelector(".black");
+const itemInput = document.querySelector(".blackInput");
 const buttonAdd = document.querySelector(".btn-primary");
 const closeBtn = document.querySelector(".close");
-// const allBtn = document.querySelectorAll(".renderPlus2");
 const itemsContainer = document.querySelector(".container");
 const closedItemsContainer = document.querySelector(".containerClosedItems");
 const exportBtn = document.querySelector(".export");
 const renderDiv = document.querySelector(".render");
 const btnCloseAll = document.querySelector(".btn-dark");
+const deleteItemsContainer = document.querySelector(".deleteItems");
+//arrays
 let items = [];
 let closedItems = [];
 let removedItems = [];
-const deleteItemsContainer = document.querySelector(".deleteItems");
-// let uniqueChars;
+// variables
+let newEl;
+let closedItemDiv;
+let deleteBtn;
+let newDiv;
+let closedBtn;
+let itemId;
+let itemIdDel;
+let itemIdEl;
+// object
+const obj = {};
+//
 const addItem = () => {
   console.log(itemInput.value);
   items.push(itemInput.value);
   //usuwanie duplikatów
-
   items = items.filter((element, index) => {
     return items.indexOf(element) === index;
   });
   console.log(items);
   console.log(`klik`);
 };
-
+//
 buttonAdd.addEventListener("click", addItem);
-let newDiv;
-let closedBtn;
+//
 const renderList = () => {
   itemsContainer.innerHTML = ""; // tutaj jest
   items.forEach((el) => {
@@ -42,7 +50,7 @@ const renderList = () => {
     newDiv.appendChild(newContent);
     closedBtn.appendChild(newContentClose);
 
-    newDiv.classList.add("renderPlus");
+    newDiv.classList.add("render");
     closedBtn.classList.add("secondary");
 
     newDiv.appendChild(closedBtn);
@@ -51,9 +59,9 @@ const renderList = () => {
     closedBtn.addEventListener("click", closeItem);
   });
 };
-
+//
 buttonAdd.addEventListener("click", renderList);
-
+//
 const closeAllItems = () => {
   closedItems = items.slice();
   console.log(itemsContainer);
@@ -70,7 +78,7 @@ const closeAllItems = () => {
 
 //
 btnCloseAll.addEventListener("click", closeAllItems);
-
+//
 const closeItem = (event) => {
   console.log(`klik`);
 
@@ -84,10 +92,7 @@ const closeItem = (event) => {
   console.log(itemToBeClosed);
   renderClosedItem(event.target.parentNode);
 };
-
-let newEl;
-let deleteBtn;
-let closedItemDiv;
+//
 const renderClosedItem = (closedItemDiv) => {
   closedItemsContainer.appendChild(closedItemDiv); //błąd string a nie node
   closedItemDiv.classList.add("crossedOutLine");
@@ -99,13 +104,12 @@ const renderClosedItem = (closedItemDiv) => {
   const deleteBtnContent = document.createTextNode("usuń");
   deleteBtn.appendChild(deleteBtnContent);
 
-  deleteBtn.classList.add("danger", "btn");
+  deleteBtn.classList.add("danger");
 
   closedItemDiv.removeChild(closedItemDiv.firstElementChild);
   closedItemDiv.appendChild(deleteBtn);
 };
 // renderClosedItem();
-let itemId;
 
 const updateRenderedList = (event) => {
   itemsContainer.innerHTML = "";
@@ -124,7 +128,6 @@ const updateRenderedList = (event) => {
 
 //
 
-const obj = {};
 const exportItems = () => {
   obj.items = items;
   obj.closedItems = closedItems;
@@ -155,12 +158,9 @@ const downloadExportedItems = () => {
   const string = JSON.stringify(obj);
   console.log(string);
 };
-
-exportBtn.addEventListener("click", exportItems);
-let itemIdDel;
-let itemIdEl;
 //
-// let newDiv2;
+exportBtn.addEventListener("click", exportItems);
+//
 const removedItem = (event) => {
   console.log(`klik`);
   // itemIdEl.forEach;
@@ -172,11 +172,12 @@ const removedItem = (event) => {
   console.log(removedItems);
   console.log(deleteItemsContainer);
 
-  // proba tutaj
+  //
   removedItems.forEach((el) => {
-    newDiv.classList.add("renderPlus", "crossedOutLine", "classOpacity");
+    newDiv.classList.add("render", "crossedOutLine", "classOpacity");
     closedBtn.classList.add("dangerDel", "crossedOutLine", "classOpacity");
     deleteItemsContainer.appendChild(newDiv);
+    deleteBtn.remove();
 
     closedBtn.addEventListener("click", closeItem);
   });
@@ -211,4 +212,5 @@ const removedItem = (event) => {
 //
 // 1. dodaje tylko jeden div do .deleteItemsContainer po przyciśnięciu btn
 //2.trzeba ustawic responyswnosc strony,tylko na mobile
-//
+//3.tam gdzie jest przesuwany div z elementami powinna być pętla
+//4.w momencie gdy klikam usuń niema petli tylko pojedyncza wartość z tablicy przesuwa się do kontenera .deleteItems
