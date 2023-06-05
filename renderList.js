@@ -1,8 +1,8 @@
 const renderList = () => {
   itemsContainer.innerHTML = ""; // tutaj jest
   items.forEach((el) => {
-    newDiv = document.createElement("div");
-    closedBtn = document.createElement("button");
+    let newDiv = document.createElement("div");
+    let closedBtn = document.createElement("button");
     const newContent = document.createTextNode(el);
     const newContentClose = document.createTextNode("ZAMKNIJ");
     newDiv.className = "render";

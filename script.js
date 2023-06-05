@@ -15,8 +15,8 @@ let removedItems = [];
 // let newEl;
 let closedItemDiv;
 let deleteBtn;
-let newDiv;
-let closedBtn;
+// let newDiv;
+// let closedBtn;
 let itemId;
 let itemIdDel;
 let itemIdEl;
@@ -47,3 +47,6 @@ const obj = {};
 //2.trzeba ustawic responyswnosc strony,tylko na mobile
 //3.tam gdzie jest przesuwany div z elementami powinna być pętla
 //4.w momencie gdy klikam usuń niema petli tylko pojedyncza wartość z tablicy przesuwa się do kontenera .deleteItems
+
+//bugi cdn.
+//1.w funkcji removedItems nie usuwasz itemu z closedItems +
