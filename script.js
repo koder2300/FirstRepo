@@ -12,7 +12,7 @@ let items = [];
 let closedItems = [];
 let removedItems = [];
 // variables
-let newEl;
+// let newEl;
 let closedItemDiv;
 let deleteBtn;
 let newDiv;
@@ -20,6 +20,7 @@ let closedBtn;
 let itemId;
 let itemIdDel;
 let itemIdEl;
+let itemIdRemoved;
 // object
 const obj = {};
 //
@@ -163,30 +164,24 @@ exportBtn.addEventListener("click", exportItems);
 //
 const removedItem = (event) => {
   console.log(`klik`);
-  // itemIdEl.forEach;
   itemIdEl = event.target.parentNode.id;
   console.log(itemIdEl);
-  // renderList();
-  // z removedItems do (aarray) append do deleteitemscont
   removedItems.push(itemIdEl);
   console.log(removedItems);
   console.log(deleteItemsContainer);
-
   //
-  removedItems.forEach((el) => {
-    newDiv.classList.add("render", "crossedOutLine", "classOpacity");
-    closedBtn.classList.add("dangerDel", "crossedOutLine", "classOpacity");
-    deleteItemsContainer.appendChild(newDiv);
-    deleteBtn.remove();
+  newDiv.classList.add("render", "crossedOutLine", "classOpacity");
+  closedBtn.classList.add("dangerDel", "crossedOutLine", "classOpacity");
+  //
+  deleteItemsContainer.appendChild(newDiv);
+  deleteBtn.remove();
+  closedBtn.addEventListener("click", closeItem);
 
-    closedBtn.addEventListener("click", closeItem);
-  });
-  // az do tąd
+  // });
   // deleteItemsContainer.appendChild(deleteBtn);
   // removedItems.splice(0, closedItems.length);
   // console.log(closedItems);
   // closedItems.splice(0, closedItems.length);
-  // console.log(removedItems);
   // closedItemsContainer.removeChild(closedItemsContainer.firstElementChild);
 };
 // removedItem();
