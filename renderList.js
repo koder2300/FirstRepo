@@ -17,4 +17,3 @@ const renderList = () => {
   });
 };
 //
-buttonAdd.addEventListener("click", renderList);

@@ -12,15 +12,6 @@ let items = [];
 let closedItems = [];
 let removedItems = [];
 // variables
-// let newEl;
-let closedItemDiv;
-let deleteBtn;
-// let newDiv;
-// let closedBtn;
-let itemId;
-let itemIdDel;
-let itemIdEl;
-let itemIdRemoved;
 // object
 const obj = {};
 
@@ -49,7 +40,7 @@ const obj = {};
 //4.w momencie gdy klikam usuń niema petli tylko pojedyncza wartość z tablicy przesuwa się do kontenera .deleteItems
 
 //bugi cdn.
-//1.w funkcji removedItems nie usuwasz itemu z closedItems +
+//1.w funkcji removedItem nie usuwasz itemu z closedItems +
 // 2. newDiv i closeBtn są globalne niepowinny +
-//3.poprawić funkcję removedItem pod względem zmiennych globalnych
-//4.
+//3.poprawić funkję removedItem pod względem zmiennych globalnych+
+//4.removeditem pod względem chwytania id +

@@ -2,8 +2,8 @@ const renderClosedItem = (closedItemDiv) => {
   closedItemDiv.classList.add("crossedOutLine");
   closedItemsContainer.appendChild(closedItemDiv); //błąd string a nie node
 
-  deleteBtn = document.createElement("button");
-  console.log(deleteBtn);
+  let deleteBtn = document.createElement("button");
+
   deleteBtn.addEventListener("click", removedItem);
   // document.body.appendChild(deleteBtn);
   //

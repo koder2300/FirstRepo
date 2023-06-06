@@ -1,30 +1,20 @@
 const removedItem = (event) => {
   console.log(`klik`);
-  // console.log(event.target.value);
   let itemIdEl = event.target.parentNode.id;
-  // console.log(itemIdEl);
   let divNew = document.createElement("div");
+  //
+  for (let item of closedItems) {
+    console.log(item);
+    item = event.target.parentNode.id;
+    divNew.id = item.slice(0, 14);
+  }
+  //
   const newContentDiv = document.createTextNode(itemIdEl);
   divNew.appendChild(newContentDiv);
   divNew.classList.add("render", "crossedOutLine", "classOpacity");
-  removedItems.push(itemIdEl);
-  removedItems.splice(0, 1);
-  //
-  closedItems.splice(0, 1);
-  console.log(closedItems);
-  console.log(removedItems);
-  let newDiv = event.target.parentNode.id;
-  let closedBtn = event.target.parentNode.id;
-  //
-  // console.log(typeof newDiv);
-  //
-  // newDiv.classList.add("render", "crossedOutLine", "classOpacity");
-  // closedBtn.classList.add("dangerDel", "crossedOutLine", "classOpacity");
-  //
-  // newDiv.appendChild(closedBtn);
+  closedItems.splice(0, closedItems.length);
   deleteItemsContainer.appendChild(divNew);
-  // deleteItemsContainer.appendChild(closedBtn);
-  deleteBtn.remove();
-  //   closedBtn.addEventListener("click", closeItem);
+  let itemId = document.querySelector(`#${itemIdEl}`);
+  closedItemsContainer.removeChild(itemId);
 };
 // removedItem();

@@ -1,13 +1,21 @@
 const closeItem = (event) => {
   console.log(`klik`);
   let itemToBeClosed = event.target.parentNode.id;
+  //
+  let divNew = document.createElement("div");
+  const newContentDiv = document.createTextNode(itemToBeClosed);
+  divNew.appendChild(newContentDiv);
+  divNew.classList.add("render");
+  items.forEach((el) => {
+    // console.log(el);
+    closedItems.push(el);
+  });
+  //
+  console.log(closedItems);
   items = items.filter((el) => {
     return event.target.parentNode.id !== el.slice(0, 14);
   });
-  closedItems.push(itemToBeClosed);
-  // closedItems.shift();
-  console.log(closedItems);
-  console.log(itemToBeClosed);
+  closedItems.shift();
   renderClosedItem(event.target.parentNode);
 };
 // closeItem();
