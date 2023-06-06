@@ -1,8 +1,9 @@
 const renderClosedItem = (closedItemDiv) => {
-  closedItemsContainer.appendChild(closedItemDiv); //błąd string a nie node
   closedItemDiv.classList.add("crossedOutLine");
+  closedItemsContainer.appendChild(closedItemDiv); //błąd string a nie node
 
   deleteBtn = document.createElement("button");
+  console.log(deleteBtn);
   deleteBtn.addEventListener("click", removedItem);
   // document.body.appendChild(deleteBtn);
   //
@@ -14,3 +15,4 @@ const renderClosedItem = (closedItemDiv) => {
   closedItemDiv.removeChild(closedItemDiv.firstElementChild);
   closedItemDiv.appendChild(deleteBtn);
 };
+// renderClosedItem();

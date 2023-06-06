@@ -10,3 +10,4 @@ const closeItem = (event) => {
   console.log(itemToBeClosed);
   renderClosedItem(event.target.parentNode);
 };
+// closeItem();

@@ -50,3 +50,6 @@ const obj = {};
 
 //bugi cdn.
 //1.w funkcji removedItems nie usuwasz itemu z closedItems +
+// 2. newDiv i closeBtn są globalne niepowinny +
+//3.poprawić funkcję removedItem pod względem zmiennych globalnych
+//4.
