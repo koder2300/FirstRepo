@@ -14,6 +14,8 @@ let removedItems = [];
 // variables
 // object
 const obj = {};
+const objClosed = {};
+const objRemoved = {};
 
 // 36.+
 // 29b  +
@@ -34,13 +36,10 @@ const obj = {};
 //
 //BUGI
 //
-// 1. dodaje tylko jeden div do .deleteItemsContainer po przyciśnięciu btn
-//2.trzeba ustawic responyswnosc strony,tylko na mobile
-//3.tam gdzie jest przesuwany div z elementami powinna być pętla
-//4.w momencie gdy klikam usuń niema petli tylko pojedyncza wartość z tablicy przesuwa się do kontenera .deleteItems
-
 //bugi cdn.
 //1.w funkcji removedItem nie usuwasz itemu z closedItems +
 // 2. newDiv i closeBtn są globalne niepowinny +
 //3.poprawić funkję removedItem pod względem zmiennych globalnych+
 //4.removeditem pod względem chwytania id +
+//duplikowanie nie działa jeśli juz sa dodane do następnych tablic elementy
+//5 przeniesione zmienne globalne +

@@ -5,6 +5,11 @@ const addItem = () => {
   items = items.filter((element, index) => {
     return items.indexOf(element) === index;
   });
+
+  removedItems = removedItems.filter((element, index) => {
+    return removedItems.indexOf(element) === index;
+  });
+
   console.log(items);
   console.log(`klik`);
   renderList();

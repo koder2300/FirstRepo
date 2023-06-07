@@ -1,10 +1,15 @@
 const exportItems = () => {
   obj.items = items;
-  obj.closedItems = closedItems;
+  objClosed.removedItems = removedItems;
+  objRemoved.closedItems = closedItems;
   console.log(obj);
   // JSON.parse(obj);
   const jsonObj = JSON.stringify(obj);
+  const jsonObjClosed = JSON.stringify(objClosed);
+  const jsonObjRemoved = JSON.stringify(objRemoved);
   console.log(jsonObj);
+  console.log(jsonObjClosed);
+  console.log(jsonObjRemoved);
 
   function download(filename, text) {
     var element = document.createElement("a");
@@ -22,6 +27,8 @@ const exportItems = () => {
     document.body.removeChild(element);
   }
   download(JSON, jsonObj);
+  download(JSON, jsonObjClosed);
+  download(JSON, jsonObjRemoved);
 };
 
 exportBtn.addEventListener("click", exportItems);

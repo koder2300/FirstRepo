@@ -14,7 +14,8 @@ const removedItem = (event) => {
   divNew.classList.add("render", "crossedOutLine", "classOpacity");
   closedItems.splice(0, closedItems.length);
   deleteItemsContainer.appendChild(divNew);
-  let itemId = document.querySelector(`#${itemIdEl}`);
+  // let itemId = document.querySelector(`#${itemIdEl}`);
+  let itemId = document.getElementById(`${itemIdEl}`);
   closedItemsContainer.removeChild(itemId);
 };
 // removedItem();

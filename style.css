@@ -95,6 +95,7 @@ body {
 }
 
 .btn-primary {
+  width: 150px;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
@@ -138,13 +139,91 @@ body {
 .dangerDel:hover {
   background-color: rgb(183, 2, 2);
 }
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1440px) {
+  .containerAll {
+    max-width: 1200px;
+  }
+  .containerItems {
+    max-width: 1200px;
+  }
+  .contInpBtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    height: 70px;
+    /* font-size: 30px; */
+  }
+  .blackInput {
+    max-width: 300px;
+  }
+  .btn-light {
+    max-width: 1200px;
+  }
+  .btn-dark {
+    max-width: 1200px;
+  }
+  .line {
+    max-width: 1200px;
+  }
 }
 @media only screen and (max-width: 768px) {
-}
-@media only screen and (max-width: 1024px) {
+  .containerAll {
+    max-width: 600px;
+  }
+  .containerItems {
+    max-width: 600px;
+  }
+  .contInpBtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    height: 70px;
+    /* font-size: 30px; */
+  }
+  .blackInput {
+    max-width: 150px;
+  }
+  .btn-light {
+    max-width: 600px;
+  }
+  .btn-dark {
+    max-width: 600px;
+  }
+  .line {
+    max-width: 600px;
+  }
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 480px) {
+  .containerAll {
+    max-width: 300px;
+  }
+  .containerItems {
+    max-width: 300px;
+  }
+  .btn-primary {
+    width: 75px;
+  }
+  .contInpBtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    height: 70px;
+    /* font-size: 30px; */
+  }
+  .blackInput {
+    max-width: 150px;
+  }
+  .btn-light {
+    max-width: 300px;
+  }
+  .btn-dark {
+    max-width: 300px;
+  }
+  .line {
+    max-width: 300px;
+  }
 }

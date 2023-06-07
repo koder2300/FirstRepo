@@ -1,5 +1,5 @@
 const renderList = () => {
-  itemsContainer.innerHTML = ""; // tutaj jest
+  itemsContainer.innerHTML = "";
   items.forEach((el) => {
     let newDiv = document.createElement("div");
     let closedBtn = document.createElement("button");

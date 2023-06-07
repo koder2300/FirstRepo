@@ -4,8 +4,8 @@ const closeAllItems = (event) => {
   let newDiv;
   closedItems.forEach((el) => {
     console.log(el);
-    let item = event.target.parentNode.id;
-    newDiv = el.id = renderClosedItem(itemsContainer.firstChild);
+    // let item = event.target.parentNode.id;
+    renderClosedItem(itemsContainer.firstChild);
   });
   console.log(items);
 

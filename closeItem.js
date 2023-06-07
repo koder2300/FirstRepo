@@ -6,9 +6,14 @@ const closeItem = (event) => {
   const newContentDiv = document.createTextNode(itemToBeClosed);
   divNew.appendChild(newContentDiv);
   divNew.classList.add("render");
+
   items.forEach((el) => {
     // console.log(el);
     closedItems.push(el);
+    //duplikowanie
+    closedItems = closedItems.filter((element, index) => {
+      return closedItems.indexOf(element) === index;
+    });
   });
   //
   console.log(closedItems);
