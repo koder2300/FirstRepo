@@ -8,13 +8,16 @@ const removedItem = (event) => {
     item = event.target.parentNode.id;
     divNew.id = item.slice(0, 14);
   }
+  console.log(divNew);
   //
+
   const newContentDiv = document.createTextNode(itemIdEl);
   divNew.appendChild(newContentDiv);
   divNew.classList.add("render", "crossedOutLine", "classOpacity");
   closedItems.splice(0, closedItems.length);
   deleteItemsContainer.appendChild(divNew);
   // let itemId = document.querySelector(`#${itemIdEl}`);
+
   let itemId = document.getElementById(`${itemIdEl}`);
   closedItemsContainer.removeChild(itemId);
 };
