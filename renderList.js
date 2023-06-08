@@ -6,7 +6,7 @@ const renderList = () => {
     const newContent = document.createTextNode(el);
     const newContentClose = document.createTextNode("ZAMKNIJ");
     newDiv.className = "render";
-    newDiv.id = el.slice(0, 14);
+    newDiv.id = el.slice();
     newDiv.appendChild(newContent);
     closedBtn.appendChild(newContentClose);
     newDiv.classList.add("render");

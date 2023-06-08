@@ -1,7 +1,7 @@
 const closeAllItems = (event) => {
   closedItems = items.slice();
   console.log(itemsContainer);
-  let itemId = event.target.parentNode.id;
+  // let itemId = event.target.parentNode.id;
   let divNew = document.createElement("div");
   //
   closedItems.forEach((el) => {
@@ -15,9 +15,6 @@ const closeAllItems = (event) => {
     // renderClosedItem(itemsContainer.firstChild);
   });
   console.log(items);
-
-  // console.log(itemIdnext);
-  //
   items.splice(0, items.length);
   // closedItems.splice(0, closedItems.length);
   // closedItemsContainer.remove();

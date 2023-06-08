@@ -14,8 +14,8 @@ let removedItems = [];
 // variables
 // object
 const obj = {};
-const objClosed = {};
-const objRemoved = {};
+// const objClosed = {};
+// const objRemoved = {};
 
 // 36.+
 // 29b  +
@@ -43,3 +43,8 @@ const objRemoved = {};
 //4.removeditem pod względem chwytania id +
 //duplikowanie nie działa jeśli juz sa dodane do następnych tablic elementy
 //5 przeniesione zmienne globalne +
+BUGI;
+//// wskazac konkretne dziecko elementu closedItemDiv
+//closeditems i removed items kopiuje z siebie poprawić
+//
+//exportitems powiela kod tzn removeditems oraz closeditems, items jest dobrze
