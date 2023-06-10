@@ -43,8 +43,7 @@ const obj = {};
 //4.removeditem pod względem chwytania id +
 //duplikowanie nie działa jeśli juz sa dodane do następnych tablic elementy
 //5 przeniesione zmienne globalne +
-BUGI;
-//// wskazac konkretne dziecko elementu closedItemDiv
-//closeditems i removed items kopiuje z siebie poprawić
+// BUGI;
+//// wskazac konkretne dziecko elementu closedItemDiv ? +
 //
-//exportitems powiela kod tzn removeditems oraz closeditems, items jest dobrze
+//tyllko małe ekrany 100% padding niewielki

@@ -1,23 +1,14 @@
-const renderClosedItem = (closedItemDiv, event) => {
+const renderClosedItem = (closedItemDiv) => {
   closedItemDiv.classList.add("crossedOutLine");
-  closedItemsContainer.appendChild(closedItemDiv); //błąd string a nie node
-  //próba
-  // closed;
-  //
+  closedItemsContainer.appendChild(closedItemDiv);
   let deleteBtn = document.createElement("button");
-
   deleteBtn.addEventListener("click", removedItem); //
   const deleteBtnContent = document.createTextNode("usuń");
   deleteBtn.appendChild(deleteBtnContent);
   deleteBtn.classList.add("danger");
-  closedItems.forEach((el) => {
-    removedItems.push(el);
-  });
-  let itemIdEl = event.target.parentNode.id;
-  let itemId = document.getElementById(`${itemIdEl}`);
-  closedItemsContainer.removeChild(itemId);
-  console.log(itemId);
-  closedItemDiv.appendChild(deleteBtn);
+  //
+  console.log(removedItems);
   // closedItemDiv.removeChild(closedItemDiv.firstElementChild);
+  closedItemDiv.appendChild(deleteBtn);
 };
 // renderClosedItem();

@@ -1,9 +1,7 @@
 const closeItem = (event) => {
   console.log(`klik`);
-
-  items.forEach((el) => {
-    closedItems.push(el);
-  });
+  let idElement = event.target.parentNode.id;
+  closedItems.push(idElement);
   console.log(closedItems);
   items = items.filter((el) => {
     return event.target.parentNode.id !== el.slice();

@@ -1,18 +1,20 @@
 const renderList = () => {
   itemsContainer.innerHTML = "";
   items.forEach((el) => {
-    let newDiv = document.createElement("div");
+    console.log(`klikam`);
+
+    let newDivCreated = document.createElement("div");
     let closedBtn = document.createElement("button");
     const newContent = document.createTextNode(el);
     const newContentClose = document.createTextNode("ZAMKNIJ");
-    newDiv.className = "render";
-    newDiv.id = el.slice();
-    newDiv.appendChild(newContent);
+    newDivCreated.className = "render";
+    newDivCreated.id = el.slice();
+    newDivCreated.appendChild(newContent);
     closedBtn.appendChild(newContentClose);
-    newDiv.classList.add("render");
+    newDivCreated.classList.add("render");
     closedBtn.classList.add("secondary");
-    newDiv.appendChild(closedBtn);
-    itemsContainer.appendChild(newDiv);
+    newDivCreated.appendChild(closedBtn);
+    itemsContainer.appendChild(newDivCreated);
     closedBtn.addEventListener("click", closeItem);
   });
 };

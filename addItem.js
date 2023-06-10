@@ -21,7 +21,7 @@ const addItem = () => {
       return closedItems.indexOf(element) === index;
     });
   }
-  console.log(removedItems);
+
   console.log(items);
   renderList();
 };

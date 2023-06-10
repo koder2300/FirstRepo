@@ -16,9 +16,6 @@ const closeAllItems = (event) => {
   });
   console.log(items);
   items.splice(0, items.length);
-  // closedItems.splice(0, closedItems.length);
-  // closedItemsContainer.remove();
-  // itemsContainer.remove();
 };
 
 btnCloseAll.addEventListener("click", closeAllItems);
