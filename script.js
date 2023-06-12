@@ -34,16 +34,6 @@ const obj = {};
 //
 // 40. Dodaj funkcję removeItem, która po wciśnięciu przycisku usuń przy danym divie doda ten item do tablicy removedItems, usunie go z tablicy closedItems i wyrenderuje w kontenerze na usunięte items. Przycisk usuń ma się nie pojawić. Stylowanie ma być na 50% opacity całego div.
 //
-//BUGI
-//
-//bugi cdn.
-//1.w funkcji removedItem nie usuwasz itemu z closedItems +
-// 2. newDiv i closeBtn są globalne niepowinny +
-//3.poprawić funkję removedItem pod względem zmiennych globalnych+
-//4.removeditem pod względem chwytania id +
-//duplikowanie nie działa jeśli juz sa dodane do następnych tablic elementy
-//5 przeniesione zmienne globalne +
-// BUGI;
+
 //// wskazac konkretne dziecko elementu closedItemDiv ? +
 //
-//tyllko małe ekrany 100% padding niewielki
