@@ -1,13 +1,9 @@
 const exportItems = () => {
+  let obj = {};
   obj.items = items;
   obj.removedItems = removedItems;
   obj.closedItems = closedItems;
-  console.log(obj);
   const jsonObj = JSON.stringify(obj);
-
-  console.log(items);
-  console.log(removedItems);
-  console.log(closedItems);
 
   function download(filename, text) {
     var element = document.createElement("a");

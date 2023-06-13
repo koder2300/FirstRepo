@@ -11,18 +11,8 @@ const addItem = () => {
     console.log(`wrong item`);
   } else {
     items.push(item);
-    items = items.filter((element, index) => {
-      return items.indexOf(element) === index;
-    });
-    removedItems = removedItems.filter((element, index) => {
-      return removedItems.indexOf(element) === index;
-    });
-    closedItems = closedItems.filter((element, index) => {
-      return closedItems.indexOf(element) === index;
-    });
   }
 
-  console.log(items);
   renderList();
 };
 //

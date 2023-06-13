@@ -8,6 +8,7 @@ const renderClosedItem = (closedItemDiv) => {
   deleteBtn.classList.add("danger");
   //
   console.log(removedItems);
+  console.log(closedItems);
   closedItemDiv.appendChild(deleteBtn);
 };
 // renderClosedItem();

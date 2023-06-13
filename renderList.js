@@ -1,8 +1,7 @@
 const renderList = () => {
   itemsContainer.innerHTML = "";
-  items.forEach((el) => {
-    console.log(`klikam`);
 
+  items.forEach((el) => {
     let newDivCreated = document.createElement("div");
     let closedBtn = document.createElement("button");
     const newContent = document.createTextNode(el);
